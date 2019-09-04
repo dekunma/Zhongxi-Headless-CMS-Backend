@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mongodb": "mongodb+srv://WilliamBacon:mdk20010220@cluster0-ofrhv.gcp.mongodb.net/test?retryWrites=true&w=majority",
+  "authentication": {
+    "secret": "356053515e407eb6890a28e03da6b51a25895294fb53b873f2400373968f4b8863ca16332816ec6ff1025455daf8e64eee9b6fe7e1d85f262e29a834e5719ba18c01083eaa4c009bc00d5e770e203336dad57227cfb277f97829882d17c0c0a7bb0fcb50949dd94d617ca5749189697b4182ac1017c1f267f6a1537b1df6feb115176465577202bbbf03bc3aca32656dd406a1804ba402b9c83c680fd103c8981bc88dad70ddcbbabf7d5d0114b77395db9f72fe2d46ad698d6e5c68f3cc1be563dd0116e6b6a67cc050aa0d5261588983b7568aa9c1aac4496b34badaee215ce5c58372e62150d2bde331cb5890417a510914c5dc9ba6c450c9c4b643b14590",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
+}
