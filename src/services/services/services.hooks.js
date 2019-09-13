@@ -1,11 +1,12 @@
 const hooks = require('feathers-authentication-hooks');
 const auth = require('@feathersjs/authentication');
+const log  =  require('../../hooks/log')
 module.exports = {
   before: {
-    all: [auth.hooks.authenticate(['jwt', 'local'])],
+    all: [],
     find: [],
     get: [],
-    create: [hooks.associateCurrentUser({ idField: 'id', as: 'sentBy' })],
+    create: [log()],
     update: [],
     patch: [],
     remove: []
